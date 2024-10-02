@@ -1,3 +1,4 @@
+// https://tailwindcss.com/docs/text-color
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
