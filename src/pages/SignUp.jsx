@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import {db} from "../firebase"
 import { serverTimestamp, setDoc, doc } from 'firebase/firestore';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 
@@ -19,7 +19,7 @@ export default function SignUp() {
   })
   // destructuring
   const {name, email, password} = formData;
-  // const navigate = useNavigate();
+   const navigate = useNavigate();
   function onChange(e) {
     // prevState is something that we are typing before and using it to keep previous information
     setFormData((prevState) => ({
@@ -43,7 +43,7 @@ export default function SignUp() {
       //store de user to the db in the collection named users
       await setDoc(doc(db, "users", user.uid), formDataCopy)
       // toast.success("Sign up was successful")
-      // navigate("/");
+       navigate("/sign-in");
     } catch (error) {
       toast.error("Something went wrong with the registration");
     }
