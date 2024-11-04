@@ -17,7 +17,9 @@ Cliquez sur Fermer.
 La nouvelle clé API figure sur la page Identifiants sous Clés API.
 (N'oubliez pas de restreindre la clé API avant de l'utiliser en production.)
 
-*/ 
+*/
+
+// blog(mongodb+srv://kevinkalenga:kevinkalenga@cluster0.9fise.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0)
 
 // ///////////////////////////////////////////////////////////////////////////////////////////////////
 

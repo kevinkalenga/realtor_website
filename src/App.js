@@ -1,4 +1,4 @@
-// favicon generator(pour creer le fiveicon)
+// favicon generator => fiveicon.io => generator=> text(pour creer le fiveicon)
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Home from './pages/Home';
 import Profile from './pages/Profile';

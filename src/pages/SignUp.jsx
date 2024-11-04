@@ -1,3 +1,4 @@
+// tailwindcss forms(npm install -D @tailwindcss/forms)
 import React, { useState } from 'react';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import OAuth from '../components/OAuth';
@@ -11,6 +12,7 @@ import { toast } from "react-toastify";
 
 
 export default function SignUp() {
+  // for showing pwd
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
     name:"",
@@ -27,7 +29,7 @@ export default function SignUp() {
       [e.target.id]:e.target.value,
     }))
   }
-
+  // firebase authentication
   async function onSubmit(e) {
     e.preventDefault();
     try {
@@ -40,7 +42,7 @@ export default function SignUp() {
       const formDataCopy = {...formData}
       delete formDataCopy.password
       formDataCopy.timestamp = serverTimestamp();
-      //store de user to the db in the collection named users
+      //store de user to the db in the collection named users in the database(firestoredatabase)
       await setDoc(doc(db, "users", user.uid), formDataCopy)
       // toast.success("Sign up was successful")
        navigate("/sign-in");
