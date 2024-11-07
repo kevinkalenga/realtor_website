@@ -37,6 +37,7 @@ export default function Offers() {
      fetchListings();
   }, [])
   
+  // this function will fetch the listings that start from the previous listings
   async function onFetchMoreListings() {
     try {
       const listingRef = collection(db, "listings");
@@ -57,6 +58,7 @@ export default function Offers() {
           data: doc.data(),
         });
       });
+      //  put the previous and add the new listings
       setListings((prevState)=>[...prevState, ...listings]);
       setLoading(false);
     } catch (error) {
