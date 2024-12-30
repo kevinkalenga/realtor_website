@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 
 
+
 export default function ForgotPassword() {
  
   const [email, setEmail] = useState("")
@@ -25,7 +26,8 @@ export default function ForgotPassword() {
      }
   }
   return (
-    <section>
+    <>
+    <section className='min-h-screen'>
        <h1 className='text-center text-3xl mt-6 font-bold'>Forgot Password</h1>
        <div className='flex justify-center flex-wrap items-center px-6 py-12 max-w-6xl mx-auto'>
           <div className='md:w-[67%] lg:w-[50%] mb-12 md:mb-6'>
@@ -64,7 +66,10 @@ export default function ForgotPassword() {
             </form>
             </div>
        </div>
+       
     </section>
+  
+    </>
   )
 }
 

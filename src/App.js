@@ -41,7 +41,7 @@ function App() {
               
               
         </Routes>
-        <Footer />
+       <Footer />
       </Router>
       <ToastContainer
          
@@ -56,6 +56,7 @@ function App() {
          pauseOnHover
          theme="dark"
       />
+      
     </>
   );
 }

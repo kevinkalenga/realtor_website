@@ -8,6 +8,7 @@ import { FcHome } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
 
+
 export default function Profile() {
 
   const auth = getAuth();
@@ -83,7 +84,7 @@ export default function Profile() {
   }
   return (
     <>
-      <section className='max-w-6xl flex mx-auto justify-center items-center flex-col'>
+      <section className='max-w-6xl flex mx-auto justify-center items-center flex-col min-h-screen'>
         <h1 className='text-3xl text-center mt-6 font-bold'>My Profile</h1>
         <div className='w-full md:w-[50%] mt-6 px-3'>
           <form>
@@ -135,7 +136,7 @@ export default function Profile() {
               <h2 className='text-2xl text-center font-semibold mb-6'>My listings</h2>
               <ul className='sm:grid sm:grid-cols-2 lg:grid-cols-3 
               xl:grid-cols-4 2xl-grid-cols-5
-              mt-6 mb-6'>
+              mt-6 mb-20'>
                 {listings.map((listing) => (
                     <ListingItem key={listing.id} 
                        id={listing.id} 
@@ -149,6 +150,7 @@ export default function Profile() {
           )
         }
       </div>
+     
     </>
   )
 }

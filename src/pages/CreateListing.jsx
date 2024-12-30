@@ -13,6 +13,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
+
 export default function CreateListing() {
   const navigate = useNavigate();
   const auth = getAuth();
@@ -177,7 +178,8 @@ export default function CreateListing() {
     return <Spinner />;
   }
   return (
-    <main className="max-w-md px-2 mx-auto">
+    <>
+    <main className="max-w-md px-2 mx-auto min-h-screen">
       <h1 className="text-3xl text-center mt-6 font-bold">Create a Listing</h1>
       <form onSubmit={onSubmit}>
         <p className="text-lg mt-6 font-semibold">Sell / Rent</p>
@@ -445,5 +447,7 @@ export default function CreateListing() {
         </button>
       </form>
     </main>
+    
+    </>
   );
 }

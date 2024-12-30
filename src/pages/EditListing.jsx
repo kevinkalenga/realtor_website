@@ -21,6 +21,7 @@ import { db } from "../firebase";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
+
 export default function CreateListing() {
   const navigate = useNavigate();
   const auth = getAuth();
@@ -214,7 +215,8 @@ export default function CreateListing() {
     return <Spinner />;
   }
   return (
-    <main className="max-w-md px-2 mx-auto">
+    <>
+    <main className="max-w-md px-2 mx-auto min-h-screen">
       <h1 className="text-3xl text-center mt-6 font-bold">Edit Listing</h1>
       <form onSubmit={onSubmit}>
         <p className="text-lg mt-6 font-semibold">Sell / Rent</p>
@@ -482,5 +484,7 @@ export default function CreateListing() {
         </button>
       </form>
     </main>
+   
+    </>
   );
 }

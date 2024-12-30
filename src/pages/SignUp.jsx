@@ -38,11 +38,12 @@ export default function SignUp() {
       updateProfile(auth.currentUser, {
          displayName:name
       })
+      // copy and remove the password from formData before sending it to the firestoredatabase
       const user = userCredential.user;
       const formDataCopy = {...formData}
       delete formDataCopy.password
       formDataCopy.timestamp = serverTimestamp();
-      //store de user to the db in the collection named users in the database(firestoredatabase)
+      //store the user to the db in the collection named users in the database(firestoredatabase)
       await setDoc(doc(db, "users", user.uid), formDataCopy)
       // toast.success("Sign up was successful")
        navigate("/sign-in");
@@ -51,7 +52,7 @@ export default function SignUp() {
     }
   }
   return (
-    <section>
+    <section className='min-h-screen'>
        <h1 className='text-center text-3xl mt-6 font-bold'>Sign Up</h1>
        <div className='flex justify-center flex-wrap items-center px-6 py-12 max-w-6xl mx-auto'>
           <div className='md:w-[67%] lg:w-[50%] mb-12 md:mb-6'>
@@ -111,8 +112,10 @@ export default function SignUp() {
                </div>
                <OAuth />
             </form>
+            
             </div>
        </div>
+      
     </section>
   )
 }

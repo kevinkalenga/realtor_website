@@ -19,6 +19,7 @@ import { Popup } from 'react-leaflet';
 
 
 
+
 export default function Listing() {
   const auth = getAuth();
   const params = useParams();
@@ -47,7 +48,7 @@ export default function Listing() {
   }
   
   return (
-    <main>
+    <main className='min-h-screen'>
       <Swiper 
        slidesPerView={1} navigation pagination=
        {{type: "progressbar"}} effect='fade' modules={[EffectFade]} autoplay={{delay:3000}}>
@@ -166,6 +167,7 @@ export default function Listing() {
           
           </div>
       </div>
+    
     </main>
   )
 }

@@ -3,7 +3,8 @@ import Slider from '../components/Slider';
 import { collection, getDocs, limit, orderBy, query, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import { Link } from 'react-router-dom';
-import ListingItem from '../components/ListingItem'
+import ListingItem from '../components/ListingItem';
+
 
 
 
@@ -100,9 +101,9 @@ export default function Home() {
   
   
   return (
-    <div>
+    <div className='min-h-screen'>
       <Slider />
-      <div className='max-w-6xl mx-auto pt-4 space-y-6'>
+      <div className='max-w-6xl mx-auto pt-4 space-y-6 mb-20'>
         {
           offerListings && offerListings.length > 0 && (
             <div className='m-2 mb-6'>
@@ -158,6 +159,7 @@ export default function Home() {
           )
         }
       </div>
+    
     </div>
   )
 }

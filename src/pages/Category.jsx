@@ -14,6 +14,7 @@ import Spinner from "../components/Spinner";
 import ListingItem from "../components/ListingItem";
 import { useParams } from "react-router-dom";
 
+
 export default function Category() {
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -77,7 +78,8 @@ export default function Category() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-3">
+    <>
+    <div className="max-w-6xl mx-auto px-3 min-h-screen">
       <h1 className="text-3xl text-center mt-6 font-bold mb-6">
         {params.categoryName === "rent" ? "Places for rent" : "Places for sale"}
       </h1>
@@ -116,5 +118,7 @@ export default function Category() {
         </p>
       )}
     </div>
+   
+    </>
   );
 }

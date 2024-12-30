@@ -5,6 +5,7 @@ import { db } from '../firebase';
 import Spinner from "../components/Spinner";
 import ListingItem from "../components/ListingItem";
 
+
 export default function Offers() {
   
   const [listings, setListings] = useState(null)
@@ -70,8 +71,8 @@ export default function Offers() {
   
   
   return (
-     
-    <div className="max-w-6xl mx-auto px-3">
+   <> 
+    <div className="max-w-6xl mx-auto px-3 min-h-screen">
     <h1 className="text-3xl text-center mt-6 font-bold mb-6">Offers</h1>
     {loading ? (
       <Spinner />
@@ -102,7 +103,9 @@ export default function Offers() {
     ) : (
       <p>There are no current offers</p>
     )}
+      
   </div>
 
+ </> 
   )
 }
